@@ -1,0 +1,16 @@
+<!doctype html>
+<html ng-app="desafiocielo">
+	<head>
+		<title>Hello AngularJS</title>
+		<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    	<script src="/cielo.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="cielo">
+			<p>Data do lançamento | Descrição | Número | Situação | Data de confirmação | Dados bancários | Valor final</p>
+			<p>{{cielo.show}}</p>
+			
+		</div>
+	</body>
+</html>
