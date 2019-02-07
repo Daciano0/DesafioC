@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -21,9 +22,8 @@ public class ExtratoLancamentosConta {
 	ExtratoLancamentosContaModel contaModel = new ExtratoLancamentosContaModel();
 	
 	
-	@GetMapping
-	public ExtratoLancamentosContaModel cielo() {
-		
+	@GetMapping("teste/{id}")
+	public ExtratoLancamentosContaModel cielo(@PathVariable int id) {
 		
 		
 		ObjectMapper objectMapper = new ObjectMapper();	
@@ -44,8 +44,8 @@ public class ExtratoLancamentosConta {
 			e.printStackTrace();
 		}
 	
-		System.out.println(contaModel.toString());
-	
+		contaModel.setId(id);
+		
 		
 		return new ExtratoLancamentosContaModel(contaModel.toString());
 	}

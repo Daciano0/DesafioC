@@ -27,6 +27,7 @@ public class ExtratoLancamentosContaModel {
 	private int totalElements;
 	
 	public String show;
+	private int id;
 	
 	
 	
@@ -62,17 +63,23 @@ public class ExtratoLancamentosContaModel {
 	}
 	
 	
+	public void setId(int id) {
+		this.id = id;
+	}
+
 	@Override
 	public String toString() {
 	
-		return ""+getListaControleLancamento().get(0).getDataLancamentoContaCorrenteCliente()+" | "
-				+getListaControleLancamento().get(0).getClienteModel().getNomeTipoOperacao()+" | "
-				+getListaControleLancamento().get(0).getNumeroEvento()+" | "
-				+getListaControleLancamento().get(0).getClienteModel().getNomeSituacaoRemessa()+" | "
-				+getListaControleLancamento().get(0).getDataEfetivaLancamento()+" | "
-				+getListaControleLancamento().get(0).getNomeBanco()+" Ag "+getListaControleLancamento().get(0).getClienteModel().getDadosDomicilioBancario().getNumeroAgencia()+" CC "
-				+getListaControleLancamento().get(0).getClienteModel().getDadosDomicilioBancario().getNumeroContaCorrente()+" | "
-				+" R$ "+getListaControleLancamento().get(0).getValorLancamentoRemessa();
+		System.out.println("Id "+id);
+		
+		return ""+getListaControleLancamento().get(id).getDataLancamentoContaCorrenteCliente()+" | "
+				+getListaControleLancamento().get(id).getClienteModel().getNomeTipoOperacao()+" | "
+				+getListaControleLancamento().get(id).getNumeroEvento()+" | "
+				+getListaControleLancamento().get(id).getClienteModel().getNomeSituacaoRemessa()+" | "
+				+getListaControleLancamento().get(id).getDataEfetivaLancamento()+" | "
+				+getListaControleLancamento().get(id).getNomeBanco()+" Ag "+getListaControleLancamento().get(0).getClienteModel().getDadosDomicilioBancario().getNumeroAgencia()+" CC "
+				+getListaControleLancamento().get(id).getClienteModel().getDadosDomicilioBancario().getNumeroContaCorrente()+" | "
+				+" R$ "+getListaControleLancamento().get(id).getValorLancamentoRemessa();
 				
 	}
 
